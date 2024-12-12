@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface TFeedProps {
   data: TFeed;
+  handleCommentClick: () => void;
 }
 
 interface TFeed {
@@ -53,7 +54,10 @@ const FeedComponent = (props: TFeedProps) => {
           <FontAwesomeIcon icon={faHeart} className="my-auto"/>
           <p>{props.data.totalLikes}</p>
         </div>
-        <div className="flex gap-2">
+        <div
+          onClick={props.handleCommentClick}
+          className="flex gap-2"
+        >
           <FontAwesomeIcon icon={faComment} className="my-auto"/>
           <p>{props.data.totalComments}</p>
         </div>
