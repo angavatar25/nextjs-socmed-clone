@@ -12,9 +12,9 @@ const StoryComponent = () => {
         </div>
         <p className="text-xs text-center">You</p>
       </div>
-      {[...Array(10)].map((num, i) => (
-        <div>
-          <div key={i} className="border rounded-full bg-transparent h-14 w-14 border-white flex items-center justify-center border-dashed">
+      {[...Array(10)].map((_num, i) => (
+        <div key={`story-${i}`}>
+          <div className="border rounded-full bg-transparent h-14 w-14 border-white flex items-center justify-center border-dashed">
             <div className="bg-gray-400 rounded-full h-10 w-10 border border-pink-500"/>
           </div>
           <p className="text-xs text-center">Name</p>

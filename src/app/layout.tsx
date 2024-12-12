@@ -33,9 +33,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="max-w-[500px] w-full mx-auto">
+        <div className="max-w-[500px] w-full mx-auto relative">
           {children}
-          <NavComponent/>
         </div>
       </body>
     </html>
