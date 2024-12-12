@@ -1,18 +1,25 @@
-import { faBell, faHome, faMagnifyingGlass, faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faBell, faHome, faMagnifyingGlass, faMessage, faPlus, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const NavComponent = () => {
+interface TNav {
+  handleShowPost: () => void;
+}
+
+const NavComponent = (props: TNav) => {
   return (
-    <div className="bg-white w-full sticky bottom-0">
+    <div className="bg-white/70 w-full sticky bottom-0 inset-0 backdrop-blur-md">
       <div className="flex items-center gap-5 justify-between p-5">
         <FontAwesomeIcon icon={faHome}/>
         <FontAwesomeIcon icon={faMagnifyingGlass}/>
-        <div className=" border border-black rounded-full flex items-center justify-center w-8 h-8">
-          <FontAwesomeIcon icon={faPlus}/>
-        </div>
-        <FontAwesomeIcon icon={faBell}/>
-        <div className="w-6 h-6 rounded-full bg-gray-500"/>
+        <FontAwesomeIcon icon={faMessage}/>
+        <FontAwesomeIcon icon={faUser}/>
       </div>
+      <button
+        onClick={props.handleShowPost}
+        className="fixed -top-12 bg-blue-500 w-10 h-10 rounded-full text-white right-2 shadow-md"
+      >
+        <FontAwesomeIcon icon={faPlus}/>
+      </button>
     </div>
   )
 };
